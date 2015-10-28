@@ -1,0 +1,11 @@
+@import "compass/css3";
+
+#header {
+    background-color: $green;
+    color: white;
+    .title {
+        h2 {
+            margin-left: 5px;
+        }
+    }
+}

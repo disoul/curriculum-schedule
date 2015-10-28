@@ -1,0 +1,35 @@
+@import "compass/css3";
+
+#content {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include box-shadow(rgba(black,0.4) 0 0 5px);
+    max-width: 980px;
+    height: 1080px;
+    margin: auto;
+    background-color: #F8F8F8;
+    .toplist {
+        @include display-flex;
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        .class {
+            @include flex(1);
+            text-align: center;
+        }
+    }
+    .leftlist {
+        @include display-flex;
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+        position: absolute;
+        left: 0;
+        .class {
+            @include flex(1);
+            text-align: center;
+        }
+    }
+    .class {
+    
+    }
+}

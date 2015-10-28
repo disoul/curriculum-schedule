@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='classSchedule'>
 <head>
     <meta charset="UTF-8">
-    <title>Curriculum Schedule</title>
+    <title>Class Schedule</title>
+    <link rel="stylesheet" href="./public/bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="./public/css/index.css">
 </head>
 <body>
-    
+    <md-toolbar id="header" layout="row" layout-align="center center">
+    <h2 class="title"><span>Class Schedule<span></h2>
+    </md-toolbar>
+
+    <md-content id="content">
+        <div class="main" ng-controller="scheduleController">
+            <div class="toplist" >
+                <div class="class"></div>
+                <div class="class"ng-repeat="day in days">
+                    <p>星期{{day}}</p>
+                </div>
+            </div>
+            <div class="leftlist">
+                <div class="class"></div>
+                <div class="class"ng-repeat="no in index">{{no}}</div>
+            </div>
+        </div>
+    </md-content>
 </body>
+<script src="./public/bower_components/angular/angular.min.js"></script>
+<script src="./public/bower_components/angular-material/angular-material.min.js"></script>
+<script src="./public/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="./public/bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="./public/js/app.js"></script>
+<script src="./public/js/scheduleController.js"></script>
 </html>

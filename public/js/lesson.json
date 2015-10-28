@@ -1,0 +1,25 @@
+{
+    "lesson": [
+        {
+        "name": "Dota2补刀技巧",
+        "day": 2,
+        "start": 3,
+        "teacher": "2009",
+        "time": 2
+        },
+        {
+        "name": "Osu移动",
+        "day": 3,
+        "start": 6,
+        "time": 2,
+        "teacher": "cookiez"
+        },
+        {
+        "name": "装逼实用技巧",
+        "day": 4,
+        "start": 3,
+        "time": 3,
+        "teacher": "叶良辰 赵日天"
+        }
+    ]
+}

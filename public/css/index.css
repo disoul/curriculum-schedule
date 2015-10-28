@@ -1,0 +1,51 @@
+#header {
+  background-color: #4CAF50;
+  color: white;
+}
+#header .title h2 {
+  margin-left: 5px;
+}
+
+#content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  max-width: 980px;
+  height: 1080px;
+  margin: auto;
+  background-color: #F8F8F8;
+}
+#content .toplist {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#content .toplist .class {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+#content .leftlist {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 0;
+}
+#content .leftlist .class {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}

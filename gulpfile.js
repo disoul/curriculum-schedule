@@ -13,7 +13,7 @@ gulp.task('compass',function(){
 });
 
 gulp.task('sass:watch',function(){
-	gulp.watch('./public/scss/**/*.sass',['compass']);
+	gulp.watch('./public/sass/**/*.scss',['compass']);
 });
 
 gulp.task('default', function() {
