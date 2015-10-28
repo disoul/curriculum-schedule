@@ -17,11 +17,11 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   max-width: 980px;
-  height: 1080px;
+  height: 800px;
   margin: auto;
   background-color: #F8F8F8;
 }
-#content .toplist {
+#content .list {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -29,23 +29,18 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-#content .toplist .class {
+#content .list .class {
   -webkit-flex: 1;
   flex: 1;
   text-align: center;
 }
-#content .leftlist {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: absolute;
-  left: 0;
+#content #main {
+  width: 100%;
+  height: 100%;
 }
-#content .leftlist .class {
-  -webkit-flex: 1;
-  flex: 1;
-  text-align: center;
+#content md-grid-tile:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 3px;
+  cursor: normal;
 }
