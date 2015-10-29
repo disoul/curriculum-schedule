@@ -1,9 +1,9 @@
 var app = angular.module('classSchedule', ['ngMaterial', 'ngCookies']);
 
-function range(amout, start) {                                                 
-    var array = new Array(amout);                                              
-    for (var i = 0;i < amout;i++) {                                            
-        array[i] = start + i;                                                  
+function range(amout, start) {                            
+    var array = new Array(amout);                             
+    for (var i = 0;i < amout;i++) {              
+        array[i] = start + i;                               
     }
     return array;
 }

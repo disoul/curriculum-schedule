@@ -9,26 +9,33 @@
 </head>
 <body>
     <md-toolbar id="header" layout="row" layout-align="center center">
-    <h2 class="title"><span>Class Schedule<span></h2>
+        <h2 class="title"><span>Class Schedule<span></h2>
     </md-toolbar>
+    <div id="menu" 
+        ng-controller="menuController" layout="row" 
+        layout-align="center center"
+        >
+        <md-fab-speed-dial ng-class="md-fling" md-direction="down" md-open=isOpen ng-click=click()>
+            <md-fab-trigger  >
+                <md-button class="md-fab" aria-label="menu">
+                    <md-icon md-svg-src="./public/asset/menu.svg"></md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button 
+                    class="md-fab" aria-label="添加课程"
+                    ng-click="showDialog($event)"
+                    >
+                    <md-tooltip>添加课程</md-tooltip>
+                    <md-icon md-svg-src="./public/asset/plus.svg">
+                    </md-icon>
+                </md-button>
+            </md-fab-actions>
+            <md-fab-actions></md-fab-actions>
+        </md-fab-speed-dial>
+    </div>
 
-    <md-fab-speed-dial id="menu" ng-class="md-fling" md-direction="down" md-open=false>
-        <md-fad-trigger  >
-            <md-button class="md-fab" aria-label="menu">
-                <md-icon md-svg-src="./public/asset/menu.svg"></md-icon>
-            </md-button>
-        </md-fad-trigger>
-        <md-fab-actions>
-            <md-button class="md-fab" aria-label="添加课程">
-                <md-tooltip>添加课程</md-tooltip>
-                <md-icon md-svg-src="./public/asset/plus.svg">
-                </md-icon>
-            </md-button>
-        </md-fab-actions>
-        <md-fab-actions></md-fab-actions>
-    </md-fab-speed-dial>
-
-    <md-content id="content"ng-controller="scheduleController" ng-cloak>
+    <!-- <md-content id="content"ng-controller="scheduleController">
         <md-grid-list id="main" 
             md-cols="7" md-rows="13" 
             md-row-height="2:1" md-gutter="6px">
@@ -39,12 +46,9 @@
                 ng-repeat="tile in getTile track by $index" md-colspan="1" 
                 md-rowspan="{{tile}}" ng-style="{'background': color(tile)}"    
            >
-                <md-grid-tile-footer>
-                    <h2>Teacher</h2>
-                </md-grid-tile-footer>
            </md-grid-tile>
         </md-grid-list>
-    </md-content>
+    </md-content> -->
 </body>
 <script src="./public/bower_components/angular/angular.min.js"></script>
 <script src="./public/bower_components/angular-material/angular-material.min.js"></script>
@@ -53,4 +57,6 @@
 <script src="./public/bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="./public/js/app.js"></script>
 <script src="./public/js/scheduleController.js"></script>
+<script src="./public/js/menuController.js"></script>
+<script src="./public/js/addClassController.js"></script>
 </html>
