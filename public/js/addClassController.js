@@ -12,11 +12,14 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies',
             day: '',
             startime: '',
             endtime: '',
-            address: ''
+            address:'' 
         };
         $scope.days = ['一','二','三','四','五','六','日'].map(function(ele, index) {
             return {cn: ele, num: index};
         });
         $scope.classes = range(12, 1);
+        $scope.commit = function() {
+
+        };
     }
 ]);

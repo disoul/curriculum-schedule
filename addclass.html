@@ -12,13 +12,25 @@
                 <md-icon md-svg-src="./public/asset/ic_school_black_24px.svg"></md-icon><span>课程信息</span>
             </h2>
             <div layout="row" layout-sm="column">
-                <md-input-container>
+                <md-input-container ng-init="maxlength = 20;">
                     <label>课程名称</label>
-                    <input ng-model="form.classname">
+                    <input 
+                        name="classname" ng-model="form.classname" 
+                        md-maxlength="maxlength" required />
+                    <div ng-messages="addclass.classname.$error" >
+                        <div ng-message="required">请输入名称</div>
+                        <div ng-message="md-maxlength">最多{{maxlength}}个字符</div>
+                    </div>
                 </md-input-container>
                 <md-input-container>
                     <label>授课老师</label>
-                    <input ng-model="form.teacher">
+                    <input 
+                        ng-model="form.teacher" name="teacher"
+                        md-maxlength="maxlength"
+                    >
+                    <div ng-messages="addclass.teacher.$error">
+                        <div ng-message="md-maxlength">最多{{maxlength}}个字符</div>
+                    </div>
                 </md-input-container>
             </div>
             <h2>
@@ -26,28 +38,37 @@
                 <span>上课时间<span></h2>
             <md-input-container>
                 <label>上课日</label>
-                <md-select ng-model="form.day">
+                <md-select ng-model="form.day" required name="day">
                     <md-option ng-repeat="day in days" value="{{day.num}}">
                         星期{{day.cn}}
                     </md-option>
                 </md-select>
+                    <div ng-messages="addclass.day.$error" >
+                        <div ng-message="required">请输入日期</div>
+                    </div>
             </md-input-container>
             <div layout="row" layout-sm="column">
                 <md-input-container>
                     <label>开始时间</label>
-                    <md-select ng-model="form.starttime">
+                    <md-select ng-model="form.starttime" required name="start">
                         <md-option ng-repeat="class in classes" value="{{class}}">
                             第{{class}}节
                         </md-option>
                     </md-select>
+                    <div ng-messages="addclass.start.$error" >
+                        <div ng-message="required">请输入开始时间</div>
+                    </div>
                 </md-input-container>
                 <md-input-container>
                     <label>结束时间</label>
-                    <md-select ng-model="form.endtime">
+                    <md-select ng-model="form.endtime" required name="end">
                         <md-option ng-repeat="class in classes" value="{{class}}">
                             第{{class}}节
                         </md-option>
                     </md-select>
+                    <div ng-messages="addclass.end.$error" >
+                        <div ng-message="required">请输入结束时间</div>
+                    </div>
                 </md-input-container>
             </div>
             <h2>
@@ -58,7 +79,11 @@
                 <input ng-model="form.address">
             </md-input-container>
             <div class="buttons" layout="row" layout-align="end">
-                <md-button class="md-raised md-primary">确认</md-button>
+                <md-button 
+                    class="md-raised md-primary" ng-click="commit()"
+                    ng-disabled="addclass.$invalid"
+                    >
+                    确认</md-button>
             </div>
         </form>
     </md-dialog-content>
