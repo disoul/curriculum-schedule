@@ -1,0 +1,16 @@
+{
+  "name": "classSchedule",
+  "homepage": "https://github.com/disoul/curriculum-schedule",
+  "authors": [
+    "disoul <starky_ds@sina.cn>"
+  ],
+  "description": "js homework",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular-cookies": "~1.4.7",
+    "angular-material": "~0.11.4",
+    "angular": "angularjs#~1.4.7"
+  }
+}

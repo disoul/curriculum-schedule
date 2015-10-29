@@ -1,4 +1,4 @@
-var app = angular.module('classSchedule', ['ngMaterial']);
+var app = angular.module('classSchedule', ['ngMaterial', 'ngCookies']);
 
 function range(amout, start) {                                                 
     var array = new Array(amout);                                              
