@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-angular-templates": "0.0.2",
     "gulp-compass": "^2.1.0",
-    "gulp-live-server": "0.0.29"
   }
 }

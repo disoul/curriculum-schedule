@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     compass = require('gulp-compass'),
 	path = require('path'),
-    gls = require('gulp-live-server');
+    template = require('gulp-angular-templates');
 
 gulp.task('compass',function(){
 	gulp.src('./public/sass/index.scss')
@@ -13,8 +13,10 @@ gulp.task('compass',function(){
 	}));
 });
 
-gulp.task('server:start', function() {
-    var server = gls.static()
+gulp.task('template', function(){
+    return gulp.src('./addclass.html')
+    .pipe(template({module: 'addClass'}))
+    .pipe(gulp.dest('./public/build'));
 });
 
 gulp.task('sass:watch',function(){
