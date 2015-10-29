@@ -1,3 +1,65 @@
-<md-dialog>
-    <md-dialog-content></md-dialog-content>
+<md-dialog ng-controller="addClassController" id="addclass">
+    <md-toolbar layout="row" layout-align="space-around center">
+        <h3 margin>添加课程</h3>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="./public/asset/lnr-cross.svg"></md-icon>
+        </md-button>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="addclass">
+            <h2>
+                <md-icon md-svg-src="./public/asset/ic_school_black_24px.svg"></md-icon><span>课程信息</span>
+            </h2>
+            <div layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>课程名称</label>
+                    <input ng-model="form.classname">
+                </md-input-container>
+                <md-input-container>
+                    <label>授课老师</label>
+                    <input ng-model="form.teacher">
+                </md-input-container>
+            </div>
+            <h2>
+                <md-icon md-svg-src="./public/asset/ic_schedule_black_24px.svg"></md-icon>
+                <span>上课时间<span></h2>
+            <md-input-container>
+                <label>上课日</label>
+                <md-select ng-model="form.day">
+                    <md-option ng-repeat="day in days" value="{{day.num}}">
+                        星期{{day.cn}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <div layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>开始时间</label>
+                    <md-select ng-model="form.starttime">
+                        <md-option ng-repeat="class in classes" value="{{class}}">
+                            第{{class}}节
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container>
+                    <label>结束时间</label>
+                    <md-select ng-model="form.endtime">
+                        <md-option ng-repeat="class in classes" value="{{class}}">
+                            第{{class}}节
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <h2>
+                <md-icon md-svg-src="./public/asset/ic_room_black_24px.svg"></md-icon>
+                <span>上课地点<span></h2>
+            <md-input-container>
+                <label>教室</label>
+                <input ng-model="form.address">
+            </md-input-container>
+            <div class="buttons" layout="row" layout-align="end">
+                <md-button class="md-raised md-primary">确认</md-button>
+            </div>
+        </form>
+    </md-dialog-content>
 </md-dialog>

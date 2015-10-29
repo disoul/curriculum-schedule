@@ -35,20 +35,20 @@
         </md-fab-speed-dial>
     </div>
 
-    <!-- <md-content id="content"ng-controller="scheduleController">
+    <md-content id="content"ng-controller="scheduleController">
         <md-grid-list id="main" 
             md-cols="7" md-rows="13" 
             md-row-height="2:1" md-gutter="6px">
-           <md-grid-tile  md-colspan="1"md-rowspan="1" ng-repeat="day in days" ng-style="{ 'background': color(22)}">
+           <md-grid-tile  md-colspan="1"md-rowspan="1" ng-repeat="day in days">
             星期{{day}}
            </md-grid-tile>
            <md-grid-tile 
                 ng-repeat="tile in getTile track by $index" md-colspan="1" 
-                md-rowspan="{{tile}}" ng-style="{'background': color(tile)}"    
+                md-rowspan="{{tile}}"    
            >
            </md-grid-tile>
         </md-grid-list>
-    </md-content> -->
+    </md-content>
 </body>
 <script src="./public/bower_components/angular/angular.min.js"></script>
 <script src="./public/bower_components/angular-material/angular-material.min.js"></script>
@@ -59,4 +59,5 @@
 <script src="./public/js/scheduleController.js"></script>
 <script src="./public/js/menuController.js"></script>
 <script src="./public/js/addClassController.js"></script>
+<script src="./public/build/addclass.html.js"></script>
 </html>

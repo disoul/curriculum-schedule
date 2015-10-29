@@ -55,3 +55,39 @@
 .md-fab:hover {
   background-color: #000 !important;
 }
+
+#addclass {
+  width: 500px;
+  max-height: 100%;
+}
+#addclass md-toolbar {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#addclass md-toolbar h3 {
+  margin: 5px;
+}
+#addclass form {
+  width: 98%;
+  margin: auto;
+}
+#addclass .buttons {
+  margin: 8px 8px 5px 0px;
+}
+#addclass md-dialog-content md-input-container {
+  -webkit-flex: 1;
+  flex: 1;
+}
+#addclass md-dialog-content md-input-container input {
+  width: 95%;
+}
+#addclass md-dialog-content h2 {
+  margin: 5px 0px 5px 10px;
+  color: #102A72;
+}
+#addclass md-dialog-content h2 span {
+  margin-left: 6px;
+}
+#addclass md-dialog-content h2 md-icon svg {
+  fill: #1e88e5;
+}

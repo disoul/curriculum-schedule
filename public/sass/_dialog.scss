@@ -1,0 +1,40 @@
+@import "compass/css3";
+#addclass {
+width: 500px;
+    max-height: 100%;
+    md-toolbar {
+        h3 {
+            margin: 5px;
+        }
+        padding: 5px;
+        margin-bottom: 10px;
+    } 
+
+    form {
+        width: 98%;
+        margin: auto;
+    }
+
+    .buttons {
+        margin: 8px 8px 5px 0px;
+    }
+
+    md-dialog-content {
+        md-input-container {
+            @include flex(1);
+            input {
+                width: 95%;;
+            }
+        }
+        h2 {
+            margin: 5px 0px 5px 10px;
+            color: $blue-800;
+            span {
+                margin-left: 6px;
+            }
+            md-icon svg{
+                fill: $blue-600
+            }
+        }
+    }
+}

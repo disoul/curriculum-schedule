@@ -3,8 +3,7 @@ app.controller('menuController', ['$scope', '$cookies', '$mdDialog', '$templateC
         $scope.isOpen = false;
         $scope.showDialog = function(ev) {
             $mdDialog.show({
-                controller: DialogController,
-                templateUrl: $templateCache.get('addClass.html'),
+                templateUrl: 'addclass.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsidetoClose: true
@@ -14,9 +13,5 @@ app.controller('menuController', ['$scope', '$cookies', '$mdDialog', '$templateC
                 //cancelled
             });
         };
-
-        function DialogController($scope, $mdDialog) {
-            
-        }
     }
 ]);

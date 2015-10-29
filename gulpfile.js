@@ -15,15 +15,10 @@ gulp.task('compass',function(){
 
 gulp.task('template', function(){
     return gulp.src('./addclass.html')
-    .pipe(template({module: 'addClass'}))
+    .pipe(template({standalone: true}))
     .pipe(gulp.dest('./public/build'));
 });
 
 gulp.task('sass:watch',function(){
 	gulp.watch('./public/sass/**/*.scss',['compass']);
 });
-
-gulp.task('default', function() {
-	['sass:watch']
-});
-
