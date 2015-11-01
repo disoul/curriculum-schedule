@@ -28,7 +28,7 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
                 console.log($cookies.get('schedule'));
             }else {
                 $cookies.put(
-                    'class'+day.toString()+start.toString(), 
+                    'class'+$scope.form.day.toString()+$scope.form.starttime.toString(), 
                     [$scope.form.classname, $scope.form.teacher, $scope.form.address]            
                 );
                 console.log('Success!');
@@ -50,11 +50,12 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
                     if  (cookiesSchedule[day][i] === 0) {
                         cookiesSchedule[day][i] = end - i;
                     }else {
+                        console.log(cookiesSchedule[day][i]);
                         return false;
                     }
-                    $cookies.put('schedule', cookiesSchedule);
-                    return true;
                 }
+                $cookies.put('schedule', cookiesSchedule);
+                return true;
             }
         }
     }

@@ -6,7 +6,7 @@ app.service('$cookiesParse', function() {
         for(var i = 0;i < 7;i++){
             var inlineArray = [];
             for(var j = 0;j < 12;j++)
-                inlineArray.push(cookiesArray[i+j]);
+                inlineArray.push(parseInt(cookiesArray[i+j]));
             scheduleArray.push(inlineArray);
         }
         return scheduleArray;
