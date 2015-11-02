@@ -35,21 +35,10 @@
         </md-fab-speed-dial>
     </div>
 
-    <md-content id="content"ng-controller="scheduleController">
-        <md-grid-list id="main" 
-            md-cols="7" md-rows="13" 
-            md-row-height="2:1" md-gutter="6px">
-           <md-grid-tile  md-colspan="1"md-rowspan="1" ng-repeat="day in days">
-            星期{{day}}
-           </md-grid-tile>
-           <md-grid-tile 
-                ng-repeat="tile in getTile track by $index" md-colspan="1" 
-                md-rowspan="{{tile}}"    
-           >
-           </md-grid-tile>
-        </md-grid-list>
+    <md-content id="content" ng-controller="scheduleController">
+        <grid-tile tiles="getTile" week="days">
+        </grid-tile>
     </md-content>
-</body>
 <script src="./public/bower_components/angular/angular.min.js"></script>
 <script src="./public/bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="./public/bower_components/angular-material/angular-material.min.js"></script>
@@ -58,8 +47,11 @@
 <script src="./public/bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="./public/js/app.js"></script>
 <script src="./public/js/cookiesPrase.js"></script>
+<script src="./public/js/scheduleDirective.js"></script>
 <script src="./public/js/scheduleController.js"></script>
 <script src="./public/js/menuController.js"></script>
 <script src="./public/js/addClassController.js"></script>
 <script src="./public/build/addclass.html.js"></script>
+<script src="./public/build/grid.html.js"></script>
+</body>
 </html>

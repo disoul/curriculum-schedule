@@ -1,5 +1,5 @@
-app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cookiesParse',
-    function($scope, $mdDialog, $cookies, $cookiesParse) {
+app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cookiesParse', '$rootScope',
+    function($scope, $mdDialog, $cookies, $cookiesParse, $rootScope) {
         $scope.cancel = function() {
             $mdDialog.cancel();
         };
@@ -32,6 +32,7 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
                     [$scope.form.classname, $scope.form.teacher, $scope.form.address]            
                 );
                 console.log('Success!');
+                $rootScope.$broadcast('updateSchedule');
                 $mdDialog.hide();            
             }
         };
@@ -39,22 +40,26 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
             console.log(day, start, end);
             if ($cookies.get('schedule') === undefined) {
                 for (var i = start - 1;i < end;i++) {
-                    blankSchedule[day][i] = end - i;
+                    blankSchedule[i][day] = end - i;
                 }
                 $cookies.put('schedule', blankSchedule);
+                console.log(blankSchedule);
                 return true;
             }else {
                 var cookiesSchedule = $cookiesParse.parseSchedule($cookies.get('schedule'));
                 console.log(cookiesSchedule);
                 for (var i = start - 1;i < end;i++) {
-                    if  (cookiesSchedule[day][i] === 0) {
-                        cookiesSchedule[day][i] = end - i;
+                    if  (cookiesSchedule[i][day] === 0) {
+                        cookiesSchedule[i][day] = end - i;
                     }else {
-                        console.log(cookiesSchedule[day][i]);
+                        console.log(cookiesSchedule[i][day]);
+                        console.log($cookies.get('schedule'));
                         return false;
                     }
                 }
                 $cookies.put('schedule', cookiesSchedule);
+                console.log(cookiesSchedule);
+                console.log($cookies.get('schedule'));
                 return true;
             }
         }

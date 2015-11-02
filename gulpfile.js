@@ -14,7 +14,7 @@ gulp.task('compass',function(){
 });
 
 gulp.task('template', function(){
-    return gulp.src('./addclass.html')
+    return gulp.src('./grid.html')
     .pipe(template({standalone: true}))
     .pipe(gulp.dest('./public/build'));
 });

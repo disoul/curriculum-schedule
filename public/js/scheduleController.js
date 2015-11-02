@@ -6,12 +6,22 @@ app.controller('scheduleController', ['$scope', '$cookies', '$cookiesParse',
             if (num == 1) return '#F8F8F8';
             return COLORS[Math.floor(Math.random() * COLORS.length)];
         };
-        $scope.getTile = (function() {
+        $scope.getTile = updateTiles();
+
+        $scope.$on('updateSchedule', function() {
+            console.log('change');
+            $scope.getTile = updateTiles();
+        });
+        function updateTiles() {
+            console.log('update');
             var array = [];
+            if ($cookies.get('schedule') === undefined)
+               return []; 
             var schedule = $cookiesParse.parseSchedule($cookies.get('schedule'));
-            console.log(schedule[0]);
-            for (var i=0;i<7;i++) {
-                for (var j=0;j<12;j++) {
+            console.log($cookies.get('schedule'));
+            console.log(schedule);
+            for (var i=0;i<12;i++) {
+                for (var j=0;j<7;j++) {
                     if (schedule[i][j] === 0) {
                         array.push(1);
                     }else if((i>0) && (schedule[i-1][j] < schedule[i][j])) {
@@ -24,6 +34,7 @@ app.controller('scheduleController', ['$scope', '$cookies', '$cookiesParse',
             }
             console.log(array);
             return array;
-        })();
+        }
+
     }] 
 );

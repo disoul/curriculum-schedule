@@ -1,0 +1,4 @@
+app.run(['$templateCache', function($templateCache) {
+    $templateCache.put('grid.html',
+        "<md-grid-list id=\"main\"                                                \n    md-cols=\"7\" md-rows=\"13\"                                           \n    md-row-height=\"2:1\" md-gutter=\"6px\">                               \n   <md-grid-tile  md-colspan=\"1\"md-rowspan=\"1\" ng-repeat=\"day in week\">\n    星期{{day}}                                                        \n   </md-grid-tile>                                                     \n   <md-grid-tile ng-repeat=\"tile in tiles track by $index\" md-colspan=\"1\" md-rowspan=\"{{tile}}\">\n   {{tile}}\n   </md-grid-tile>                                                     \n</md-grid-list> \n");
+}]);
