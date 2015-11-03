@@ -1,5 +1,5 @@
-app.controller('menuController', ['$scope', '$cookies', '$mdDialog', '$templateCache',
-    function($scope, $ngCookies, $mdDialog, $templateCache) {
+app.controller('menuController', ['$scope', '$mdDialog', '$templateCache',
+    function($scope, $mdDialog, $templateCache) {
         $scope.isOpen = false;
         $scope.showDialog = function(ev) {
             $mdDialog.show({

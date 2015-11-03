@@ -35,18 +35,36 @@
         </md-fab-speed-dial>
     </div>
 
-    <md-content id="content" ng-controller="scheduleController">
+    <md-content id="content"  ng-controller="scheduleController">
+        <div class="left-list" flex="1">
+            <md-grid-list
+                md-cols="1" md-rows="13"
+                md-row-height="1:1" md-gutter="6px"
+            >
+                <md-grid-tile
+                    md-colspan="1"md-rowspan="1"
+                >
+                </md-grid-tile>
+                <md-grid-tile 
+                    md-colspan="1"md-rowspan="1" 
+                    ng-repeat="number in index"
+                >
+                {{number}}
+                </md-grid-tile>
+            
+            </md-grid-list>
+        </div>
         <grid-tile tiles="getTile" week="days">
         </grid-tile>
     </md-content>
 <script src="./public/bower_components/angular/angular.min.js"></script>
 <script src="./public/bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="./public/bower_components/angular-material/angular-material.min.js"></script>
-<script src="./public/bower_components/angular-cookies/angular-cookies.min.js"></script>
 <script src="./public/bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="./public/bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="./public/js/app.js"></script>
-<script src="./public/js/cookiesPrase.js"></script>
+<script src="./public/js/colors.js"></script>
+<script src="./public/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="./public/js/scheduleDirective.js"></script>
 <script src="./public/js/scheduleController.js"></script>
 <script src="./public/js/menuController.js"></script>

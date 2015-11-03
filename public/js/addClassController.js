@@ -1,5 +1,5 @@
-app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cookiesParse', '$rootScope',
-    function($scope, $mdDialog, $cookies, $cookiesParse, $rootScope) {
+app.controller('addClassController', ['$scope', '$mdDialog', 'localStorageService', '$rootScope',
+    function($scope, $mdDialog, localStorageService, $rootScope) {
         $scope.cancel = function() {
             $mdDialog.cancel();
         };
@@ -25,9 +25,9 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
                     parseInt($scope.form.day), parseInt($scope.form.starttime), 
                     parseInt($scope.form.endtime))) {
                 console.log('Error!');
-                console.log($cookies.get('schedule'));
+                console.log(localStorageService.get('schedule'));
             }else {
-                $cookies.put(
+                localStorageService.set(
                     'class'+$scope.form.day.toString()+$scope.form.starttime.toString(), 
                     [$scope.form.classname, $scope.form.teacher, $scope.form.address]            
                 );
@@ -38,28 +38,28 @@ app.controller('addClassController', ['$scope', '$mdDialog', '$cookies', '$cooki
         };
         function updateScheduleArray(day, start, end) {
             console.log(day, start, end);
-            if ($cookies.get('schedule') === undefined) {
+            if (localStorageService.get('schedule') === null) {
                 for (var i = start - 1;i < end;i++) {
                     blankSchedule[i][day] = end - i;
                 }
-                $cookies.put('schedule', blankSchedule);
+                localStorageService.set('schedule', blankSchedule);
                 console.log(blankSchedule);
                 return true;
             }else {
-                var cookiesSchedule = $cookiesParse.parseSchedule($cookies.get('schedule'));
+                var cookiesSchedule = localStorageService.get('schedule');
                 console.log(cookiesSchedule);
                 for (var i = start - 1;i < end;i++) {
                     if  (cookiesSchedule[i][day] === 0) {
                         cookiesSchedule[i][day] = end - i;
                     }else {
                         console.log(cookiesSchedule[i][day]);
-                        console.log($cookies.get('schedule'));
+                        console.log(localStorageService.get('schedule'));
                         return false;
                     }
                 }
-                $cookies.put('schedule', cookiesSchedule);
+                localStorageService.set('schedule', cookiesSchedule);
                 console.log(cookiesSchedule);
-                console.log($cookies.get('schedule'));
+                console.log(localStorageService.get('schedule'));
                 return true;
             }
         }

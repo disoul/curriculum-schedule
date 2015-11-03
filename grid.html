@@ -4,7 +4,10 @@
    <md-grid-tile  md-colspan="1"md-rowspan="1" ng-repeat="day in week">
     星期{{day}}                                                        
    </md-grid-tile>                                                     
-   <md-grid-tile ng-repeat="tile in tiles track by $index" md-colspan="1" md-rowspan="{{tile}}">
-   {{tile}}
+   <md-grid-tile ng-style="{'background-color': tile.color}" ng-repeat="tile in tiles track by $index" md-colspan="1" md-rowspan="{{tile.len}}">
+   {{tile.name}}
+   <md-grid-tile-footer ng-if="tile.isclass">
+        {{tile.teacher}},{{tile.address}}
+   </md-grid-tile-footer>
    </md-grid-tile>                                                     
 </md-grid-list> 

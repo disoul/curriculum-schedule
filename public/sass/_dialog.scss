@@ -1,6 +1,8 @@
 @import "compass/css3";
 #addclass {
-width: 500px;
+    @media(min-width: 600px) {
+        width: 500px;
+    }
     max-height: 100%;
     md-toolbar {
         h3 {
